@@ -1,0 +1,455 @@
+/* =========================================
+   CAMPUS CONNECT PORTAL - MAIN STYLESHEET
+   ========================================= */
+
+/* ---------- RESET & BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 55px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo section */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* RV circular badge */
+.brand-badge {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #16803c;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* University name */
+.university-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: 0.2px;
+}
+
+.university-name sup {
+    font-size: 7px;
+}
+
+/* Department */
+.sub-dept {
+    margin-top: 1px;
+    font-size: 9px;
+    color: #777777;
+}
+
+/* Navigation buttons */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-actions a {
+    text-decoration: none;
+}
+
+/* Login button */
+.btn-secondary {
+    padding: 7px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #555555;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+    border-color: #cccccc;
+}
+
+/* Register button */
+.btn-primary {
+    padding: 7px 16px;
+    border: none;
+    border-radius: 4px;
+    background: #16803c;
+    color: #ffffff;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #116b31;
+}
+
+/* ---------- HERO BANNER ---------- */
+.hero-banner {
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #16803c;
+    padding: 45px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+    color: white;
+}
+
+/* Module tag */
+.module-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    max-width: 550px;
+    margin: 0 auto 20px auto;
+    font-size: 11px;
+    color: #f2f2f2;
+}
+
+.btn-hero-primary {
+    display: inline-block;
+    padding: 9px 18px;
+    background: #ffffff;
+    color: #16803c;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- GENERAL SECTIONS ---------- */
+.section-container {
+    width: 100%;
+    padding: 35px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    font-size: 10px;
+    color: #888888;
+    margin-bottom: 22px;
+}
+
+/* ---------- CAROUSEL ---------- */
+.carousel-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+}
+
+.carousel-track-container {
+    width: 100%;
+    max-width: 760px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 10px;
+    text-align: center;
+}
+
+.carousel-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #16803c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: 0.2s ease;
+    user-select: none;
+}
+
+.carousel-btn:hover {
+    background: #116b31;
+    transform: scale(1.08);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #cccccc;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.active-dot {
+    background: #16803c;
+    transform: scale(1.2);
+}
+
+/* ---------- ROLE SECTION ---------- */
+.bg-light {
+    background: #f8f9fa;
+    padding-top: 35px;
+    padding-bottom: 45px;
+}
+
+.roles-grid {
+    width: 100%;
+    max-width: 1000px;
+    margin: 25px auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.role-card {
+    background: white;
+    min-height: 220px;
+    padding: 20px 18px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-top: 3px solid;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.student-border { border-top-color: #32a852; }
+.faculty-border { border-top-color: #3157d5; }
+.admin-border   { border-top-color: #7438c8; }
+
+.role-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.role-card h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.feature-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 18px 0;
+}
+
+.feature-bullets li {
+    font-size: 9px;
+    color: #666666;
+    margin-bottom: 7px;
+}
+
+.btn-portal {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: auto;
+    transition: 0.2s ease;
+}
+
+.student-bg { background: #32a852; }
+.student-bg:hover { background: #258c43; }
+
+.faculty-bg { background: #3157d5; }
+.faculty-bg:hover { background: #2547b5; }
+
+.admin-bg { background: #7438c8; }
+.admin-bg:hover { background: #5e2ba5; }
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 800px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .sub-dept {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+
+    .carousel-track-container {
+        max-width: 90%;
+    }
+
+    .slide img {
+        height: 230px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        height: 60px;
+    }
+
+    .university-name {
+        font-size: 11px;
+    }
+
+    .nav-actions {
+        gap: 5px;
+    }
+
+    .btn-secondary,
+    .btn-primary {
+        padding: 6px 10px;
+        font-size: 9px;
+    }
+
+    .hero-banner {
+        min-height: 220px;
+        padding: 35px 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 9px;
+    }
+
+    .section-container {
+        padding: 30px 15px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .carousel-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+    }
+
+    .slide img {
+        height: 190px;
+    }
+}   

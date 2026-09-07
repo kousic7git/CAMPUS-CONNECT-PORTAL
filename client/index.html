@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Connect Portal | Home</title>
+
+    <style>
+        /* =========================================
+           CAMPUS CONNECT PORTAL - STYLES
+           ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #333333;
+            line-height: 1.5;
+        }
+
+        /* ---------- NAVBAR ---------- */
+        .navbar {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 55px;
+            background: #ffffff;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-badge {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #16803c;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .university-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #333333;
+            letter-spacing: 0.2px;
+        }
+
+        .university-name sup {
+            font-size: 7px;
+        }
+
+        .sub-dept {
+            margin-top: 1px;
+            font-size: 9px;
+            color: #777777;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-actions a {
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            padding: 7px 15px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            background: #ffffff;
+            color: #555555;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+
+        .btn-primary {
+            padding: 7px 16px;
+            border: none;
+            border-radius: 4px;
+            background: #16803c;
+            color: #ffffff;
+            font-size: 11px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #116b31;
+        }
+
+        /* ---------- HERO BANNER ---------- */
+        .hero-banner {
+            width: 100%;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: #16803c;
+            padding: 45px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: auto;
+            color: white;
+        }
+
+        .module-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            max-width: 550px;
+            margin: 0 auto 20px auto;
+            font-size: 11px;
+            color: #f2f2f2;
+        }
+
+        .btn-hero-primary {
+            display: inline-block;
+            padding: 9px 18px;
+            background: #ffffff;
+            color: #16803c;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ---------- GENERAL SECTIONS ---------- */
+        .section-container {
+            width: 100%;
+            padding: 35px 8%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .section-subtitle {
+            font-size: 10px;
+            color: #888888;
+            margin-bottom: 22px;
+        }
+
+        /* ---------- CAROUSEL ---------- */
+        .carousel-wrapper {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+        }
+
+        .carousel-track-container {
+            width: 100%;
+            max-width: 760px;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 8px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        .carousel-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            background: #16803c;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: 0.2s;
+        }
+
+        .carousel-btn:hover {
+            background: #116b31;
+            transform: scale(1.08);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #cccccc;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .active-dot {
+            background: #16803c;
+            transform: scale(1.2);
+        }
+
+        /* ---------- ROLE SECTION ---------- */
+        .bg-light {
+            background: #f8f9fa;
+            padding-top: 35px;
+            padding-bottom: 45px;
+        }
+
+        .roles-grid {
+            width: 100%;
+            max-width: 1000px;
+            margin: 25px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .role-card {
+            background: white;
+            min-height: 220px;
+            padding: 20px 18px;
+            border-radius: 5px;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-top: 3px solid;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .student-border { border-top-color: #32a852; }
+        .faculty-border { border-top-color: #3157d5; }
+        .admin-border   { border-top-color: #7438c8; }
+
+        .role-icon {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .role-card h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+
+        .feature-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+        }
+
+        .feature-bullets li {
+            font-size: 9px;
+            color: #666666;
+            margin-bottom: 7px;
+        }
+
+        .btn-portal {
+            width: 100%;
+            border: none;
+            border-radius: 3px;
+            padding: 8px;
+            color: white;
+            font-size: 9px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: auto;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: 0.2s;
+        }
+
+        .student-bg { background: #32a852; }
+        .student-bg:hover { background: #258c43; }
+
+        .faculty-bg { background: #3157d5; }
+        .faculty-bg:hover { background: #2547b5; }
+
+        .admin-bg { background: #7438c8; }
+        .admin-bg:hover { background: #5e2ba5; }
+
+        /* ---------- STUDENT AUTH SECTION ---------- */
+        .registration-section {
+            background-color: #eef3f7;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .registration-card {
+            width: 380px;
+            max-width: 100%;
+            background-color: #ffffff;
+            padding: 24px 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .registration-header {
+            background-color: #07182f;
+            color: #ffffff;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+        }
+
+        .registration-header h2 {
+            color: #d6b15a;
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .registration-header p {
+            color: #ffffff;
+            margin: 4px 0 0 0;
+            font-size: 0.75rem;
+            font-style: italic;
+        }
+
+        .registration-card h3 {
+            color: #334155;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .auth-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .auth-tabs button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .tab-active {
+            background-color: #07182f;
+            color: #d6b15a;
+        }
+
+        .tab-inactive {
+            background-color: #d9e1e7;
+            color: #64748b;
+        }
+
+        .registration-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .registration-form input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #b8c2cc;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .registration-form input:focus {
+            border-color: #16803c;
+        }
+
+        .create-account-btn {
+            width: 100%;
+            padding: 13px;
+            background-color: #d6a11e;
+            color: #1f2937;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: 0.2s;
+        }
+
+        .create-account-btn:hover {
+            background-color: #bd8c12;
+        }
+
+        /* ---------- RESPONSIVE DESIGN ---------- */
+        @media (max-width: 800px) {
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .sub-dept {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 26px;
+            }
+
+            .roles-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .carousel-track-container {
+                max-width: 90%;
+            }
+
+            .slide img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= TOP NAVIGATION HEADER ================= -->
+    <header class="navbar">
+        <div class="logo-group">
+            <div class="brand-badge">RV</div>
+            <div>
+                <span class="university-name">
+                    RV UNIVERSITY<sup>®</sup>
+                </span>
+                <p class="sub-dept">School of Computer Science & Engineering</p>
+            </div>
+        </div>
+
+        <div class="nav-actions">
+            <a href="#register" class="btn-secondary" id="navLoginBtn">Login</a>
+            <a href="#register" class="btn-primary" id="navRegisterBtn">Register</a>
+        </div>
+    </header>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <span class="module-tag">CS3301 - FULL STACK DEVELOPMENT</span>
+            <h1>CAMPUS CONNECT PORTAL</h1>
+            <p class="subtitle">
+                Connecting Students, Faculty, and Administrators on a Single Digital Platform.
+            </p>
+            <div class="hero-cta-group">
+                <a href="#roles" class="btn-hero-primary">Explore User Portals ➔</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CAROUSEL SECTION ================= -->
+    <section class="section-container">
+        <h2 class="section-title">Campus Life & Portal Highlights</h2>
+        <p class="section-subtitle">Experience academic management simplified through modern technology.</p>
+
+        <div class="carousel-wrapper">
+            <!-- Prev Button -->
+            <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+
+            <!-- Carousel Container -->
+            <div class="carousel-track-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- SLIDE 1 -->
+                    <div class="slide active-slide">
+                        <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1200&q=80" alt="Modern University Campus">
+                        <div class="slide-caption">Modern University Infrastructure</div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="Students collaborating">
+                        <div class="slide-caption">Collaborative Learning & Hackathons</div>
+                    </div>
+
+                    <!-- SLIDE 3 -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80" alt="Students using digital technology">
+                        <div class="slide-caption">Real-Time Academic Management</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next slide">&#10095;</button>
+        </div>
+
+        <!-- CAROUSEL DOTS -->
+        <div class="carousel-dots" id="carouselDots">
+            <span class="dot active-dot" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </section>
+
+    <!-- ================= USER ROLE SECTION ================= -->
+    <section id="roles" class="section-container bg-light">
+        <h2 class="section-title">Choose Your Portal View</h2>
+
+        <div class="roles-grid">
+            <!-- Student Portal -->
+            <article class="role-card student-border">
+                <div class="role-icon">👨‍🎓</div>
+                <h3>Student Portal</h3>
+                <ul class="feature-bullets">
+                    <li>• View Notices & Events</li>
+                    <li>• Submit Assignments</li>
+                    <li>• Track Attendance</li>
+                    <li>• Update Profile</li>
+                </ul>
+                <a href="#register" class="btn-portal student-bg">Access Student View</a>
+            </article>
+
+            <!-- Faculty Portal -->
+            <article class="role-card faculty-border">
+                <div class="role-icon">👨‍🏫</div>
+                <h3>Faculty Portal</h3>
+                <ul class="feature-bullets">
+                    <li>• Post Notices & Events</li>
+                    <li>• Create Assignments</li>
+                    <li>• Mark Attendance</li>
+                    <li>• View Submissions</li>
+                </ul>
+                <a href="#register" class="btn-portal faculty-bg">Access Faculty View</a>
+            </article>
+
+            <!-- Admin Portal -->
+            <article class="role-card admin-border">
+                <div class="role-icon">🛡️</div>
+                <h3>Admin Portal</h3>
+                <ul class="feature-bullets">
+                    <li>• Manage Users</li>
+                    <li>• Manage Notices & Events</li>
+                    <li>• View System Reports</li>
+                    <li>• System Settings</li>
+                </ul>
+                <a href="#register" class="btn-portal admin-bg">Access Admin View</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- ================= STUDENT LOGIN & REGISTRATION SECTION ================= -->
+    <section id="register" class="registration-section">
+        <div class="registration-card">
+            <!-- Header -->
+            <div class="registration-header">
+                <h2>RV UNIVERSITY</h2>
+                <p>Excellence in Education</p>
+            </div>
+
+            <!-- Title -->
+            <h3 id="formTitle">Student Login</h3>
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button type="button" class="tab-active" id="loginTabBtn">Login</button>
+                <button type="button" class="tab-inactive" id="regTabBtn">Register</button>
+            </div>
+
+            <!-- Form -->
+            <form class="registration-form" id="authForm">
+                <input type="text" id="nameInput" placeholder="Full Name" style="display: none;" />
+                <input type="email" id="emailInput" placeholder="RVU Email Address" required />
+                <input type="password" id="passInput" placeholder="Password" required />
+                <button type="submit" class="create-account-btn" id="submitBtn">Sign In to Portal</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Carousel ---
+            const track = document.getElementById('carouselTrack');
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dots = document.querySelectorAll('.dot');
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let autoSlideInterval = null;
+
+            function updateCarousel() {
+                if (!track) return;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active-slide', index === currentIndex);
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active-dot', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+            dots.forEach((dot) => {
+                dot.addEventListener('click', (e) => {
+                    const index = parseInt(e.target.getAttribute('data-index'), 10);
+                    if (!isNaN(index)) {
+                        currentIndex = index;
+                        updateCarousel();
+                    }
+                });
+            });
+
+            function startAutoSlide() {
+                if (!autoSlideInterval) {
+                    autoSlideInterval = setInterval(nextSlide, 4500);
+                }
+            }
+
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                }
+            }
+
+            if (carouselWrapper) {
+                carouselWrapper.addEventListener('mouseenter', stopAutoSlide);
+                carouselWrapper.addEventListener('mouseleave', startAutoSlide);
+            }
+
+            startAutoSlide();
+
+            // --- Form Tab Switcher (Login vs Register) ---
+            const loginTabBtn = document.getElementById('loginTabBtn');
+            const regTabBtn = document.getElementById('regTabBtn');
+            const formTitle = document.getElementById('formTitle');
+            const nameInput = document.getElementById('nameInput');
+            const submitBtn = document.getElementById('submitBtn');
+            const authForm = document.getElementById('authForm');
+            const navLoginBtn = document.getElementById('navLoginBtn');
+            const navRegisterBtn = document.getElementById('navRegisterBtn');
+            let isLogin = true;
+
+            function setMode(loginMode) {
+                isLogin = loginMode;
+                if (isLogin) {
+                    loginTabBtn.className = 'tab-active';
+                    regTabBtn.className = 'tab-inactive';
+                    formTitle.textContent = 'Student Login';
+                    nameInput.style.display = 'none';
+                    nameInput.removeAttribute('required');
+                    submitBtn.textContent = 'Sign In to Portal';
+                } else {
+                    regTabBtn.className = 'tab-active';
+                    loginTabBtn.className = 'tab-inactive';
+                    formTitle.textContent = 'Student Registration';
+                    nameInput.style.display = 'block';
+                    nameInput.setAttribute('required', 'true');
+                    submitBtn.textContent = 'Create Student Account';
+                }
+            }
+
+            if (loginTabBtn) loginTabBtn.addEventListener('click', () => setMode(true));
+            if (regTabBtn) regTabBtn.addEventListener('click', () => setMode(false));
+            if (navLoginBtn) navLoginBtn.addEventListener('click', () => setMode(true));
+            if (navRegisterBtn) navRegisterBtn.addEventListener('click', () => setMode(false));
+
+            if (authForm) {
+                authForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const email = document.getElementById('emailInput').value;
+                    if (isLogin) {
+                        alert(`Logging in with: ${email}`);
+                    } else {
+                        const name = nameInput.value;
+                        alert(`Account created for: ${name} (${email})`);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
